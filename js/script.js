@@ -27,7 +27,11 @@ const search = e => {
   //fnd the matching name or email in students array and push to filterStudents array
   let filterStudents = [];
   students.forEach(student => {
-    if (student.textContent.includes(e.target.value)) {
+    if (
+      student.textContent
+        .toLocaleLowerCase()
+        .includes(e.target.value.toLowerCase())
+    ) {
       filterStudents.push(student);
       student.style.display = "";
     } else {
